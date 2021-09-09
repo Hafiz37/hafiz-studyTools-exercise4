@@ -1,5 +1,8 @@
 
-let webAPI = "https://api.github.com/users/Hafiz37";
+let tanyaNamaGithub = prompt('masukkan nama github anda')
+alert('cek di console')
+let webAPI = "https://api.github.com/users/" + tanyaNamaGithub;
+
 
 // fetch()
 let promiseFatch = () =>{
@@ -12,14 +15,14 @@ let promiseFatch = () =>{
         }
     })
     .then((result) => {
-        console.log("mengambil data API menggunakan fatch() dengan promise");
+        console.log("*=~=~=~ mengambil data API menggunakan fatch() dengan promise ~=~=~=*");
         console.log("seluruh data dari github users : ");
         console.log(result);
         console.log("beberapa data dari github users :");
         console.log("1. nama = "  + result.name);
         console.log('2. alamat = ' + result.location);
         console.log('3. repositori publik = ' + result.public_repos);
-        console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        console.log("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     })
     .catch((error) => {
         console.log('ada yang error = ' +error);
@@ -28,38 +31,22 @@ let promiseFatch = () =>{
 promiseFatch();
 
 
-
-
-
-
-// async()
-// let asyncFetch = async () => {
-//     response = await response.json();
-//     console.log("mengambil data API menggunakan fatch() dengan asynch / await");
-//     console.log("seluruh data dari github users : ");
-//     console.log(respons);
-//     console.log("beberapa data dari github users :");
-//     console.log("1. nama = "  + respons.name);
-//     console.log('2. alamat = ' + respons.location);
-//     console.log('3. repositori publik = ' + respons.public_repos);
-//     console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-// }
-
-// asyncFetch();
-
-
+// asynch
 async function ambilData(){
     let a = await fetch(webAPI)
     a = await a.json()
 
-    console.log("mengambil data API menggunakan fatch() dengan asynch / await");
+    console.log("*=~=~=~ mengambil data API menggunakan fatch() dengan asynch / await ~=~=~=*");
     console.log("seluruh data dari github users : ");
     console.log(a);
     console.log("beberapa data dari github users :");
     console.log("1. nama = "  + a.name);
     console.log('2. alamat = ' + a.location);
     console.log('3. repositori publik = ' + a.public_repos);
-    console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    console.log("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 }
 
 ambilData()
+
+
+
